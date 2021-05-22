@@ -56,8 +56,7 @@ export default class WelcomeScreen extends Component{
 userLogin = (emailId, password)=>{
    firebase.auth().signInWithEmailAndPassword(emailId, password)
    .then(()=>{
-
-   })
+    this.props.navigation.navigate('BuyScreen')})
    .catch((error)=> {
      var errorCode = error.code;
      var errorMessage = error.message;
@@ -252,7 +251,7 @@ showModal = ()=>{
 const styles = StyleSheet.create({
   container:{
    flex:1,
-   backgroundColor:'#F8BE85',
+   backgroundColor:'lightblue',
    alignItems: 'center',
    justifyContent: 'center'
  },
@@ -261,13 +260,13 @@ const styles = StyleSheet.create({
    fontSize:65,
    fontWeight:'300',
    paddingBottom:30,
-   color : '#ff3d00'
+   color : 'red'
  },
  loginBox:{
    width: 300,
    height: 40,
    borderBottomWidth: 1.5,
-   borderColor : '#ff8a65',
+   borderColor : 'black',
    fontSize: 20,
    margin:10,
    paddingLeft:10
@@ -287,7 +286,7 @@ const styles = StyleSheet.create({
    borderRadius:20,
    justifyContent:'center',
    alignItems:'center',
-   backgroundColor:"#ffff",
+   backgroundColor:"#ffffff",
    marginRight:30,
    marginLeft : 30,
    marginTop:80,
@@ -341,7 +340,7 @@ const styles = StyleSheet.create({
    justifyContent:'center',
    alignItems:'center',
    borderRadius:25,
-   backgroundColor:"#ff9800",
+   backgroundColor:"orange",
    shadowColor: "#000",
    shadowOffset: {
       width: 0,

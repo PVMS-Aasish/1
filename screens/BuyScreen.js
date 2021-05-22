@@ -4,12 +4,15 @@ import { ListItem, Icon } from 'react-native-elements';
 import firebase from 'firebase';
 import MyHeader from '../components/MyHeader';
 import db from '../config';
+
 export default class BuyScreen extends Component{
  render(){
     return(
-              <View>
+              <View> 
+                <MyHeader navigation ={this.props.navigation }/> 
                   <Text> Home Screen</Text>
                   </View>
                   )
+                  
                 }
             }

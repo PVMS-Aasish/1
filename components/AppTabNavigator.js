@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, FlatList,Text } from 'react-native';
+import {Image } from 'react-native';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import BuyScreen from '../screens/BuyScreen';
 import SellScreen from '../screens/SellScreen';
@@ -7,13 +7,15 @@ import SellScreen from '../screens/SellScreen';
 export const AppTabNavigator=createBottomTabNavigator({
       BuyScreen:{
           screen:BuyScreen,
-          NavigationOption:{
+          navigationOptions:{
+            tabBarIcon : <Image source={require("../assets/buy.png")} style={{width:20 ,height:20 }}/>,
             tabBarLabel : "Buy"   
         }
       },
-      SellScreen:{
+      SellScreen:{ 
         screen:SellScreen,
-        NavigationOption:{
+        navigationOptions:{
+          tabBarIcon : <Image source={require("../assets/sell.png")} style={{width:20 ,height:20 }}/>,
           tabBarLabel : "Sell"   
       }
     }
